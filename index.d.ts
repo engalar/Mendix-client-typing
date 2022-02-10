@@ -401,6 +401,10 @@ declare namespace mx {
         paramsSpec: { Progress: string };
     }
 
+    interface Subscription {
+        unsubscribe: ()=>void
+    }
+
     interface data {
         action(action: {
             params: {
@@ -560,7 +564,7 @@ declare namespace mx {
             guid: string,
             attr: string,
             callback: (guid: number, attr: string, attrValue: any) => void
-        }): number;
+        }): Subscription;
         /**
          * Registers a callback to be invoked on validations errors in a specific MxObject.
          */
@@ -568,21 +572,21 @@ declare namespace mx {
             guid: string,
             val: boolean,
             callback: (validations: mendix.lib.ObjectValidation[]) => void
-        }): number;
+        }): Subscription;
         /**
          * Registers a callback to be invoked on changes specific entity
          */
         subscribe(args: {
             entity: string,
             callback: (entity: string) => void
-        }): number;
+        }): Subscription;
         /**
          * Registers a callback to be invoked on changes in an MxObject
          */
         subscribe(args: {
             guid: string,
-            callback: (guid: number) => void
-        }): number;
+            callback: (guid: string) => void
+        }, form:mxui.lib.form._FormBase): Subscription;
         unsubscribe(handle: number): void;
         update(args: {
             guid?: string,
@@ -602,6 +606,7 @@ declare namespace mx {
         ): void;
         synchronizeDataWithFiles(successCallback: () => void, failureCallback: (error: Error) => void): void;
         synchronizeOffline(options: { fast: boolean }, successCallback: () => void, failureCallback: (error: Error) => void): void;
+        getCachedObject(guid: string): mendix.lib.MxObject;
     }
 
     interface meta {

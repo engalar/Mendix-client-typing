@@ -2,7 +2,7 @@
 
 This type definition is based on the Mendix client API documentation
 
-https://apidocs.mendix.com/7/client/
+https://apidocs.mendix.com/8/client/
 
 ## Installation
  > npm install --save-dev mendix-client
@@ -56,4 +56,4 @@ dojoDeclare("com.mendix.widget.mywidget.MyWidget", [ WidgetBase ], (function(Sou
 More info about the Dojo declare hack for TypesScript: https://github.com/DefinitelyTyped/DefinitelyTyped/tree/types-2.0/dojo/README.md 
 
 ## Dependency
- * Mendix 7 Modeler - https://appstore.home.mendix.com
+ * Mendix 8 Modeler - https://appstore.home.mendix.com
