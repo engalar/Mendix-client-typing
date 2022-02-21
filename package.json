@@ -1,5 +1,5 @@
 {
-  "name": "mendix-client",
+  "name": "@engalar/mendix-client",
   "author": "Andries Smit <andries.smit@flockofbirds.org>",
   "description": "Typescript type definition for Mendix client",
   "version": "8.0.0",
