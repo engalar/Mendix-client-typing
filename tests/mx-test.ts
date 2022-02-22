@@ -1,5 +1,5 @@
 /* tslint:disable */
-import * as Big from "big.js";
+import Big from "big.js";
 
 var form = new mxui.lib.form._FormBase()
 
@@ -231,7 +231,7 @@ mx.data.unsubscribe(subscription);
 var subscription = mx.data.subscribe({
     guid: "123213",
     val: true,
-    callback: function (validations) {
+    callback: function (validations:mendix.lib.ObjectValidation[]) {
         var reason = validations[0].getErrorReason("MyAttribute");
         console.log("Reason for validation error on attribute MyAttribute: " + reason);
     }
@@ -307,9 +307,6 @@ form.listen("commit", function(callback, error) {
     callback();
 });
 
-this.connect(this.mxform, form.onNavigation, function() {
-   // custom logic
-});
 
 mx.ui.openForm("MyFirstModule/Puppies.page.xml", {
     location: "popup",

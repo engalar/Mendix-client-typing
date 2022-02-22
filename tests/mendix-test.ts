@@ -1,6 +1,6 @@
 /* tslint:disable */
-import * as lang from "mendix/lang";
-import * as validator from "mendix/validator"
+import lang from "mendix/lang";
+import validator from "mendix/validator"
 
 logger.error("Message", "More info");
 logger.debug("Message", "More info");
@@ -80,7 +80,6 @@ alert("Name of the father of this person's friend is " + value);
 mxObject.get("IsActive");   // true
 mxObject.get("Name");       // "John Doe"
 var numericValue = mxObject.get("LoginCount");
-numericValue instanceof Big // true
 numericValue.toString()     // "315"
 
 var attrs = mxObject.getAttributes(); // ["Name", "Age"];

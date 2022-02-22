@@ -2,6 +2,7 @@
 // Project: https://www.mendix.com/
 // Definitions by: Andries Smit <https://github.com/andries-smit>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
+// https://apidocs.rnd.mendix.com/8/client/mx.data.html
 
 /// <reference types="dojo/dijit" />
 
@@ -565,6 +566,10 @@ declare namespace mx {
             attr: string,
             callback: (guid: number, attr: string, attrValue: any) => void
         }): Subscription;
+        subscribe(args: {
+            guid: string,
+            callback: (guid: number) => void
+        }): Subscription;
         /**
          * Registers a callback to be invoked on validations errors in a specific MxObject.
          */
@@ -587,7 +592,7 @@ declare namespace mx {
             guid: string,
             callback: (guid: string) => void
         }, form:mxui.lib.form._FormBase): Subscription;
-        unsubscribe(handle: number): void;
+        unsubscribe(handle: Subscription): void;
         update(args: {
             guid?: string,
             entity?: string
@@ -752,8 +757,7 @@ declare module "mxui/widget/_WidgetBase" {
 }
 
 declare module "mxui/dom" {
-    const array: mxui.dom;
-    export = array;
+    export = mxui.dom;
 }
 
 declare module "mendix/lang" {
