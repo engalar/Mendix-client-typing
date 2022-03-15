@@ -5,8 +5,6 @@
 // https://apidocs.rnd.mendix.com/8/client/mx.data.html
 
 /// <reference types="dojo/dijit" />
-/// <reference types="big.js" />
-
 
 declare namespace mendix {
     export interface MendixInterface {
@@ -50,7 +48,7 @@ declare namespace mendix {
              * Returns the value of an attribute.
              * For reference attributes, use mendix/lib/MxObject#getReference and mendix/lib/MxObject#getReferences instead.
              */
-            get(attribute: string): string | number | boolean | BigJs.Big; // add external big
+            get(attribute: string): string | number | boolean; // add external big
             getReference(reference: string): string;
             getOriginalValue(attribute: string): string | number | boolean; // add external big
             getAttributes(): string[]; // Convenience method from mxMetaObject
